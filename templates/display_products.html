@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
+  <title>Products</title>
+</head>
+<body>
+  <div class="pull-right">
+    <a href="/logout" class="btn btn-danger"> Logout </a>
+  </div>
+  <div class="container p-3">
+    <a href="/my_prods/{{mail}}" class="btn btn-success"> My Products </a>
+  </div>
+  <div class="container text-center ">  
+    <br><h1> All Products </h1><br><br>
+    <table class="table">
+        <th class="text-center"> Product Id</th>
+        <th class="text-center"> Product Name</th>
+        <th class="text-center"> Product Cost</th>
+        <th class="text-center"> Product Description</th>
+        <th class="text-center"> Cart Button </th>
+      <tbody>
+        {%for row in data%}
+        <tr>
+          <td> {{row.product_id}}</td>
+          <td> {{row.product_name}}</td>
+          <td> {{row.product_cost}}</td>
+          <td> {{row.product_desc}}</td>
+          <td> <button class="btn btn-success" onclick="return confirm('Successfully added to cart!')"> Add to Cart</button> </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

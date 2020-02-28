@@ -1,0 +1,23 @@
+<div class="container">
+    <br><br>
+    <h1 class="text-center">Edit Form</h1><br>
+    <form action="{{ url_for('products_route.update',mail=mail,prod_name=data.product_name)}}" method="POST">
+
+    <div class="form-group">
+        <label> Product Name : </label>
+        <input type="text" class="form-control" name="product_name" value="{{data.product_name}}" required="1"/>
+    </div>
+    <div class="form-group">
+        <label> Product Cost : </label>
+        <input type="number" class="form-control" name="product_cost" value="{{data.product_cost}}" required="1"/>
+    </div>
+    <div class="form-group">
+      <label> Product Description : </label>
+      <input type="text" class="form-control" name="product_desc" value="{{data.product_desc}}" required="1"/>
+    </div>
+    
+    <div class="form-group">
+       <button class="btn btn-primary" type="sbumit">Update Product</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
+    <title>{{title}}</title>
+</head>
+<body>
+  {% block body %}{% endblock %}
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
+    <div class="text-center bg-dark text-white">
+      <div class="navbar-header">
+        <h1 class="text-center"> Welcome to site!</h1>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  {% block content%}
+    
+  {% endblock%}
+    
+</body>
+</html>

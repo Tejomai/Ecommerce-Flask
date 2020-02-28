@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
+  <title>Products</title>
+</head>
+<body>
+  <div class="container text-center "> 
+    <div class="pull-right">
+      <a href="/logout" class="btn btn-danger"> Logout </a>
+    </div>
+    <div class="pull-left">
+      <a href="/all_products/{{mail}}" class="btn btn-primary">All Products</a>
+    </div>
+      {% include '_messages.html' %}
+      <br><h1> Products List </h1><br><br>
+      <table class="table">
+        <th class="text-center"> Product Name</th>
+        <th class="text-center"> Product Cost</th>
+        <th class="text-center"> Product Description</th>
+        <th class="text-center"> Options </th>
+      <tbody>
+        {%for row in data%}
+        <tr>
+          <td>{{row.product_name}}</td>
+          <td> {{row.product_cost}}</td>
+          <td> {{row.product_desc}}</td>
+          <td><a href="{{url_for('products_route.edit', mail=mail, prod_name=row.product_name)}}" class="btn btn-danger" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+          <a href= "{{url_for('products_route.delete', mail=mail, prod_name=row.product_name)}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete it ?')">Delete</a>
+          </td></tr>
+        {%endfor%}
+      </tbody>
+      </table>
+      <div class="container">
+        <a href="/add_prod/{{mail}}" class="btn btn-primary">Add New Product</a>
+      </div>
+  </div>
+  
+</body>
+</html>

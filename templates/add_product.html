@@ -1,0 +1,12 @@
+{% from "_formhelpers.html" import render_field %}
+<div class="container p-5">
+    <h1>Enter Product Details !</h1><br>
+    <form action="/add_prod/{{data}}" method="POST">
+        {% include '_messages.html' %}
+        {{ render_field(form.product_name)}}<br>
+        {{ render_field(form.product_cost) }}<br>
+        {{ render_field(form.product_desc) }}<br>
+        <input type="submit" value="Add Product" class="btn btn-info">
+
+    </form>
+</div>
