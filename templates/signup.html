@@ -2,12 +2,12 @@
 {% block content %}
   {% from "_formhelpers.html" import render_field %}
     <form action="" method="POST">
-    <div class="container text-center">
-        {% include '_messages.html' %}
-      {{ render_field(form.user_name)}}
-      {{ render_field(form.user_mail) }}
-      {{ render_field(form.user_paswd) }}
-      {{ render_field(form.confirm) }}
+    <div class="container">
+      {% include '_messages.html' %}
+      {{ render_field(form.user_name, class="form-control ")}}<br>
+      {{ render_field(form.user_mail, class="form-control") }}<br>
+      {{ render_field(form.user_paswd,class="form-control")}}<br>
+      {{ render_field(form.confirm, class="form-control") }}
       <br>
       <input type="submit" value="Sign Up" class="btn btn-info">
     </div>
